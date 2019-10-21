@@ -1,0 +1,60 @@
+<p>crudoperation works!</p>
+
+<div class="container div">
+    <form action="" #userform="ngForm" class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2">First Name:</label>
+            <input type="text"[(ngModel)]="model.firstName" required name="firstName" class="form-control" class="col-sm-10">
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2">Last Name:</label>
+            <input type="text"[(ngModel)]="model.lastName" required name="lastName" class="form-control" class="col-sm-10">
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2">Email:</label>
+            <input type="email" [(ngModel)]="model.mail" required name="mail" class="form-control" class="col-sm-10">
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2">Phone Number:</label>
+            <input type="number"[(ngModel)]="model.mobile" required  name="mobile" class="form-control" class="col-sm-10">
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary" [disabled]="userform.invalid" (click)="addEmployee()">Save</button>
+            </div>
+        </div>  
+    </form><hr>
+    <div class="panel">
+        <div class="panel-heading panel-success"><h6>{{msg}}</h6></div>
+    </div>
+    <h1>Read and Delet Data</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>SL.No.</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th colspan="2" class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees;let i = index">
+                <td>{{emp.num}}</td>
+                <td>{{emp.firstName}}</td>
+                <td>{{emp.lastName}}</td>
+                <td>{{emp.mail}}</td>
+                <td>{{emp.mobile}}</td>
+                <td><button class="btn btn-success"(click)="editEmployee(i)">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    <span><strong>Edit</strong></span></button>       
+                </td>
+                <td><button class="btn btn-danger  glyphicon glyphicon-remove" (click)="deleteEmployee(i)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6"><div class="font-icon-detail"><i class="tim-icons icon-istanbul"></i><p>icon-istanbul</p></div></div>

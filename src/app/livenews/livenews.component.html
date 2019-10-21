@@ -1,0 +1,18 @@
+<!-- <button (click)="funn()">Button</button> -->
+<!-- <meta http-equiv="refresh" content="10"> -->
+<div class="panel panel-default">
+    <div class="panel-heading"><h1>NEWS</h1></div>
+        <div class="jumbotron" *ngFor="let news of newsdata.articles">
+            <div class="row">
+                <div class="col-sm-4"><h3>{{news.title}}</h3></div>
+                <div class="col-sm-4"><p>{{news.publishedAt}}</p></div>
+                <div class="col-sm-4"><i>{{news.author}}</i></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6"><b>Description:</b>{{news.description}}
+                <p><b>Content:</b>{{news.content}}</p></div>
+                 <div class="col-sm-6"><img src="{{news.urlToImage}}" class="img-circle" height="400px" width="600px">
+                 <a href="{{news.url}}">{{news.url}}</a></div>
+            </div>
+        </div>
+</div>
